@@ -54,3 +54,28 @@ t_INGREDIENTES_E = r''
 
 t_INGREDIENTE_S = r''
 t_INGREDIENTE_E = r''
+
+# Texto entre etiquetas
+t_TEXT =r''
+
+# Definir una regla para ignorar espacios en blanco y saltos de línea
+t_ignore = ' \t\n'
+
+# Definir una regla para manejar errores
+def t_error(t):
+    print(f"Error de análisis: {t.value[0]}")
+    t.lexer.skip(1)
+
+# Realizar validación de prueba antes de pasar a Yacc
+
+input_string = ' '
+
+while input_string !='':
+    print('Para salir introduce enter----- ')
+    input_string = input('entrada a validar sintácticamente: ')
+
+    if input_string !='':
+        lexer.input(input_string)
+
+    for tok in lexer:
+        print(tok)
