@@ -71,8 +71,8 @@ def t_error(t):
 input_string = ' '
 
 while input_string !='':
-    print('Para salir introduce enter----- ')
     input_string = input('entrada a validar sintácticamente: ')
+    print('Para salir introduce enter----- ')
 
     if input_string !='':
         lexer.input(input_string)
