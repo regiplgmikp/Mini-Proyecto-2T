@@ -68,6 +68,8 @@ def t_error(t):
 
 # Realizar validación de prueba antes de pasar a Yacc
 
+lexer = lex.lex()
+
 input_string = ' '
 
 while input_string !='':
@@ -79,3 +81,5 @@ while input_string !='':
 
     for tok in lexer:
         print(tok)
+
+        
