@@ -1,0 +1,262 @@
+<productos>
+    <producto>
+        <id>001</id>
+        <nombre>Crema Hidratante</nombre>
+        <marca>GlowSkin</marca>
+        <categoria>Hidratante</categoria>
+        <precio>299.99</precio>
+        <stock>50</stock>
+        <descripcion>Hidrata profundamente la piel seca.</descripcion>
+        <ingredientes>
+            <ingrediente>Ácido hialurónico</ingrediente>
+            <ingrediente>Aloe vera</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>002</id>
+        <nombre>Sérum Vitamina C</nombre>
+        <marca>SkinRadiant</marca>
+        <categoria>Serum</categoria>
+        <precio>399.00</precio>
+        <stock>30</stock>
+        <descripcion>Ilumina y unifica el tono de la piel.</descripcion>
+        <ingredientes>
+            <ingrediente>Vitamina C</ingrediente>
+            <ingrediente>Niacinamida</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>003</id>
+        <nombre>Limpiador Facial</nombre>
+        <marca>PureClean</marca>
+        <categoria>Limpiador</categoria>
+        <precio>199.99</precio>
+        <stock>45</stock>
+        <descripcion>Elimina impurezas sin resecar la piel.</descripcion>
+        <ingredientes>
+            <ingrediente>Ácido salicílico</ingrediente>
+            <ingrediente>Extracto de té verde</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>004</id>
+        <nombre>Tónico Refrescante</nombre>
+        <marca>FreshTone</marca>
+        <categoria>Tónico</categoria>
+        <precio>179.50</precio>
+        <stock>60</stock>
+        <descripcion>Tonifica y equilibra el pH de la piel.</descripcion>
+        <ingredientes>
+            <ingrediente>Agua de rosas</ingrediente>
+            <ingrediente>Hamamelis</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>005</id>
+        <nombre>Protector Solar FPS50</nombre>
+        <marca>SunShield</marca>
+        <categoria>Protección solar</categoria>
+        <precio>349.00</precio>
+        <stock>35</stock>
+        <descripcion>Alta protección contra rayos UVA/UVB.</descripcion>
+        <ingredientes>
+            <ingrediente>Óxido de zinc</ingrediente>
+            <ingrediente>Dióxido de titanio</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>006</id>
+        <nombre>Mascarilla Purificante</nombre>
+        <marca>CleanGlow</marca>
+        <categoria>Mascarilla</categoria>
+        <precio>259.99</precio>
+        <stock>25</stock>
+        <descripcion>Limpia profundamente los poros.</descripcion>
+        <ingredientes>
+            <ingrediente>Carbón activado</ingrediente>
+            <ingrediente>Caolín</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>007</id>
+        <nombre>Contorno de Ojos</nombre>
+        <marca>EyeBright</marca>
+        <categoria>Tratamiento</categoria>
+        <precio>299.00</precio>
+        <stock>20</stock>
+        <descripcion>Reduce ojeras y bolsas debajo de los ojos.</descripcion>
+        <ingredientes>
+            <ingrediente>Cafeína</ingrediente>
+            <ingrediente>Ácido hialurónico</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>008</id>
+        <nombre>Exfoliante Facial</nombre>
+        <marca>ScrubMe</marca>
+        <categoria>Exfoliante</categoria>
+        <precio>189.50</precio>
+        <stock>40</stock>
+        <descripcion>Remueve células muertas y suaviza la piel.</descripcion>
+        <ingredientes>
+            <ingrediente>Ácido glicólico</ingrediente>
+            <ingrediente>Extracto de papaya</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>009</id>
+        <nombre>Esencia Revitalizante</nombre>
+        <marca>VitalDrop</marca>
+        <categoria>Esencia</categoria>
+        <precio>379.00</precio>
+        <stock>22</stock>
+        <descripcion>Revitaliza la piel opaca y cansada.</descripcion>
+        <ingredientes>
+            <ingrediente>Fermentos naturales</ingrediente>
+            <ingrediente>Péptidos</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>010</id>
+        <nombre>Agua Micelar</nombre>
+        <marca>MicellClear</marca>
+        <categoria>Limpiador</categoria>
+        <precio>159.99</precio>
+        <stock>55</stock>
+        <descripcion>Desmaquilla y limpia suavemente.</descripcion>
+        <ingredientes>
+            <ingrediente>Micelas</ingrediente>
+            <ingrediente>Glicerina</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>011</id>
+        <nombre>Crema Antiarrugas</nombre>
+        <marca>TimeOff</marca>
+        <categoria>Tratamiento</categoria>
+        <precio>459.00</precio>
+        <stock>28</stock>
+        <descripcion>Reduce visiblemente líneas de expresión.</descripcion>
+        <ingredientes>
+            <ingrediente>Retinol</ingrediente>
+            <ingrediente>Colágeno</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>012</id>
+        <nombre>Bruma Facial</nombre>
+        <marca>MistySkin</marca>
+        <categoria>Tónico</categoria>
+        <precio>149.99</precio>
+        <stock>65</stock>
+        <descripcion>Refresca e hidrata durante el día.</descripcion>
+        <ingredientes>
+            <ingrediente>Extracto de pepino</ingrediente>
+            <ingrediente>Camomila</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>013</id>
+        <nombre>Gel Facial Calmante</nombre>
+        <marca>SoothingCare</marca>
+        <categoria>Tratamiento</categoria>
+        <precio>209.50</precio>
+        <stock>32</stock>
+        <descripcion>Calma irritaciones y enrojecimientos.</descripcion>
+        <ingredientes>
+            <ingrediente>Aloe vera</ingrediente>
+            <ingrediente>Alantoína</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>014</id>
+        <nombre>Crema Matificante</nombre>
+        <marca>OilControl</marca>
+        <categoria>Hidratante</categoria>
+        <precio>269.99</precio>
+        <stock>38</stock>
+        <descripcion>Controla el brillo y reduce la grasa.</descripcion>
+        <ingredientes>
+            <ingrediente>Niacinamida</ingrediente>
+            <ingrediente>Extracto de bambú</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>015</id>
+        <nombre>Limpiador Espumoso</nombre>
+        <marca>FoamFresh</marca>
+        <categoria>Limpiador</categoria>
+        <precio>179.00</precio>
+        <stock>48</stock>
+        <descripcion>Espuma suave que limpia profundamente.</descripcion>
+        <ingredientes>
+            <ingrediente>Ácido láctico</ingrediente>
+            <ingrediente>Extracto de manzanilla</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>016</id>
+        <nombre>Suero Reafirmante</nombre>
+        <marca>LiftBoost</marca>
+        <categoria>Serum</categoria>
+        <precio>499.00</precio>
+        <stock>27</stock>
+        <descripcion>Reafirma y tonifica la piel madura.</descripcion>
+        <ingredientes>
+            <ingrediente>Péptidos</ingrediente>
+            <ingrediente>Vitamina E</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>017</id>
+        <nombre>Crema Nocturna</nombre>
+        <marca>NightCare</marca>
+        <categoria>Hidratante</categoria>
+        <precio>329.99</precio>
+        <stock>30</stock>
+        <descripcion>Nutre intensamente durante la noche.</descripcion>
+        <ingredientes>
+            <ingrediente>Manteca de karité</ingrediente>
+            <ingrediente>Vitamina B5</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>018</id>
+        <nombre>Mascarilla de Arcilla</nombre>
+        <marca>ClayPure</marca>
+        <categoria>Mascarilla</categoria>
+        <precio>239.00</precio>
+        <stock>29</stock>
+        <descripcion>Absorbe el exceso de grasa y purifica.</descripcion>
+        <ingredientes>
+            <ingrediente>Arcilla verde</ingrediente>
+            <ingrediente>Árbol de té</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>019</id>
+        <nombre>Crema Despigmentante</nombre>
+        <marca>EvenSkin</marca>
+        <categoria>Tratamiento</categoria>
+        <precio>359.00</precio>
+        <stock>18</stock>
+        <descripcion>Ayuda a reducir manchas oscuras.</descripcion>
+        <ingredientes>
+            <ingrediente>Ácido kójico</ingrediente>
+            <ingrediente>Vitamina C</ingrediente>
+        </ingredientes>
+    </producto>
+    <producto>
+        <id>020</id>
+        <nombre>Agua Termal</nombre>
+        <marca>ThermalSkin</marca>
+        <categoria>Tónico</categoria>
+        <precio>199.99</precio>
+        <stock>34</stock>
+        <descripcion>Calma y refresca la piel sensible.</descripcion>
+        <ingredientes>
+            <ingrediente>Agua mineral</ingrediente>
+            <ingrediente>Silicio</ingrediente>
+        </ingredientes>
+    </producto>
+</productos>

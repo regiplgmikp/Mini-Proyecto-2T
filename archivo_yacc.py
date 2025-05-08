@@ -1,9 +1,6 @@
 import ply.yacc as yacc
 from archivo_lex import tokens
 
-import ply.yacc as yacc
-from lexer import tokens
-
 inserts = []
 
 # Regla inicial: <productos> ... </productos>
@@ -65,7 +62,7 @@ def p_lista_ingredientes_mas(p):
     'lista_ingredientes : INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes'
     p[0] = [p[2]] + p[4]
 
-# Error de sintaxis
+# Error de sintaxisvo
 def p_error(p):
     if p:
         print(f"Error de sintaxis en '{p.value}'")

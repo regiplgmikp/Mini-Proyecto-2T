@@ -70,16 +70,16 @@ def t_error(t):
 
 lexer = lex.lex()
 
-input_string = ' '
+# input_string = ' '
 
-while input_string !='':
-    input_string = input('entrada a validar sintácticamente: ')
-    print('Para salir introduce enter----- ')
+# while input_string !='':
+#     input_string = input('entrada a validar sintácticamente: ')
+#     print('Para salir introduce enter----- ')
 
-    if input_string !='':
-        lexer.input(input_string)
+#     if input_string !='':
+#         lexer.input(input_string)
 
-    for tok in lexer:
-        print(tok)
+#     for tok in lexer:
+#         print(tok)
 
         
