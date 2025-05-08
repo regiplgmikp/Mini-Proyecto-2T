@@ -10,6 +10,7 @@ def p_productos(p):
     with open("insert_productos.txt", "w", encoding="utf-8") as f:
         for ins in inserts:
             f.write(ins + '\n')
+    print("Inserts generados y guardados en 'insert_productos.txt'")
 
 # Regla para una lista con un solo producto
 def p_lista_productos_uno(p):
@@ -21,16 +22,16 @@ def p_lista_productos_mas(p):
 
 # Estructura completa del producto con campos y anidación
 def p_producto(p):
-    '''producto : PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E'''
+    '''producto : PRODUCTO_S id nombre marca categoria precio stock descripcion ingredientes PRODUCTO_E'''
     producto = {
-        "id": p[3],
-        "nombre": p[6],
-        "marca": p[9],
-        "categoria": p[12],
-        "precio": p[15],
-        "stock": p[18],
-        "descripcion": p[21],
-        "ingredientes": p[24],
+        "id": p[2],
+        "nombre": p[3],
+        "marca": p[4],
+        "categoria": p[5],
+        "precio": p[6],
+        "stock": p[7],
+        "descripcion": p[8],
+        "ingredientes": p[9]
     }
 
     insert_producto = f"INSERT INTO productos (id, nombre, marca, categoria, precio, stock, descripcion) VALUES ('{producto['id']}', '{producto['nombre']}', '{producto['marca']}', '{producto['categoria']}', {producto['precio']}, {producto['stock']}, '{producto['descripcion']}');"
@@ -40,6 +41,38 @@ def p_producto(p):
         insert_ing = f"INSERT INTO ingredientes (producto_id, nombre) VALUES ('{producto['id']}', '{ing}');"
         inserts.append(insert_ing)
 
+def p_id(p):
+    'id : ID_S TEXT ID_E'
+    p[0] = p[2]
+
+def p_nombre(p):
+    'nombre : NOMBRE_S TEXT NOMBRE_E'
+    p[0] = p[2]
+
+def p_marca(p):
+    'marca : MARCA_S TEXT MARCA_E'
+    p[0] = p[2]
+
+def p_categoria(p):
+    'categoria : CATEGORIA_S TEXT CATEGORIA_E'
+    p[0] = p[2]
+
+def p_precio(p):
+    'precio : PRECIO_S TEXT PRECIO_E'
+    p[0] = p[2]
+
+def p_stock(p):
+    'stock : STOCK_S TEXT STOCK_E'
+    p[0] = p[2]
+
+def p_descripcion(p):
+    'descripcion : DESCRIPCION_S TEXT DESCRIPCION_E'
+    p[0] = p[2]
+
+def p_ingredientes(p):
+    'ingredientes : INGREDIENTES_S lista_ingredientes INGREDIENTES_E'
+    p[0] = p[2]
+    
 # Ingredientes: un solo ingrediente
 def p_lista_ingredientes_uno(p):
     'lista_ingredientes : INGREDIENTE_S TEXT INGREDIENTE_E'

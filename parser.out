@@ -6,43 +6,59 @@ Rule 0     S' -> productos
 Rule 1     productos -> PRODUCTOS_S lista_productos PRODUCTOS_E
 Rule 2     lista_productos -> producto
 Rule 3     lista_productos -> producto lista_productos
-Rule 4     producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
-Rule 5     lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E
-Rule 6     lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes
+Rule 4     producto -> PRODUCTO_S id nombre marca categoria precio stock descripcion ingredientes PRODUCTO_E
+Rule 5     id -> ID_S TEXT ID_E
+Rule 6     nombre -> NOMBRE_S TEXT NOMBRE_E
+Rule 7     marca -> MARCA_S TEXT MARCA_E
+Rule 8     categoria -> CATEGORIA_S TEXT CATEGORIA_E
+Rule 9     precio -> PRECIO_S TEXT PRECIO_E
+Rule 10    stock -> STOCK_S TEXT STOCK_E
+Rule 11    descripcion -> DESCRIPCION_S TEXT DESCRIPCION_E
+Rule 12    ingredientes -> INGREDIENTES_S lista_ingredientes INGREDIENTES_E
+Rule 13    lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E
+Rule 14    lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes
 
 Terminals, with rules where they appear
 
-CATEGORIA_E          : 4
-CATEGORIA_S          : 4
-DESCRIPCION_E        : 4
-DESCRIPCION_S        : 4
-ID_E                 : 4
-ID_S                 : 4
-INGREDIENTES_E       : 4
-INGREDIENTES_S       : 4
-INGREDIENTE_E        : 5 6
-INGREDIENTE_S        : 5 6
-MARCA_E              : 4
-MARCA_S              : 4
-NOMBRE_E             : 4
-NOMBRE_S             : 4
-PRECIO_E             : 4
-PRECIO_S             : 4
+CATEGORIA_E          : 8
+CATEGORIA_S          : 8
+DESCRIPCION_E        : 11
+DESCRIPCION_S        : 11
+ID_E                 : 5
+ID_S                 : 5
+INGREDIENTES_E       : 12
+INGREDIENTES_S       : 12
+INGREDIENTE_E        : 13 14
+INGREDIENTE_S        : 13 14
+MARCA_E              : 7
+MARCA_S              : 7
+NOMBRE_E             : 6
+NOMBRE_S             : 6
+PRECIO_E             : 9
+PRECIO_S             : 9
 PRODUCTOS_E          : 1
 PRODUCTOS_S          : 1
 PRODUCTO_E           : 4
 PRODUCTO_S           : 4
-STOCK_E              : 4
-STOCK_S              : 4
-TEXT                 : 4 4 4 4 4 4 4 5 6
+STOCK_E              : 10
+STOCK_S              : 10
+TEXT                 : 5 6 7 8 9 10 11 13 14
 error                : 
 
 Nonterminals, with rules where they appear
 
-lista_ingredientes   : 4 6
+categoria            : 4
+descripcion          : 4
+id                   : 4
+ingredientes         : 4
+lista_ingredientes   : 12 14
 lista_productos      : 1 3
+marca                : 4
+nombre               : 4
+precio               : 4
 producto             : 2 3
 productos            : 0
+stock                : 4
 
 Parsing method: LALR
 
@@ -66,7 +82,7 @@ state 2
     (1) productos -> PRODUCTOS_S . lista_productos PRODUCTOS_E
     (2) lista_productos -> . producto
     (3) lista_productos -> . producto lista_productos
-    (4) producto -> . PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (4) producto -> . PRODUCTO_S id nombre marca categoria precio stock descripcion ingredientes PRODUCTO_E
 
     PRODUCTO_S      shift and go to state 5
 
@@ -86,7 +102,7 @@ state 4
     (3) lista_productos -> producto . lista_productos
     (2) lista_productos -> . producto
     (3) lista_productos -> . producto lista_productos
-    (4) producto -> . PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (4) producto -> . PRODUCTO_S id nombre marca categoria precio stock descripcion ingredientes PRODUCTO_E
 
     PRODUCTOS_E     reduce using rule 2 (lista_productos -> producto .)
     PRODUCTO_S      shift and go to state 5
@@ -96,10 +112,12 @@ state 4
 
 state 5
 
-    (4) producto -> PRODUCTO_S . ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (4) producto -> PRODUCTO_S . id nombre marca categoria precio stock descripcion ingredientes PRODUCTO_E
+    (5) id -> . ID_S TEXT ID_E
 
-    ID_S            shift and go to state 8
+    ID_S            shift and go to state 9
 
+    id                             shift and go to state 8
 
 state 6
 
@@ -117,214 +135,284 @@ state 7
 
 state 8
 
-    (4) producto -> PRODUCTO_S ID_S . TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
-
-    TEXT            shift and go to state 9
-
-
-state 9
-
-    (4) producto -> PRODUCTO_S ID_S TEXT . ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
-
-    ID_E            shift and go to state 10
-
-
-state 10
-
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E . NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (4) producto -> PRODUCTO_S id . nombre marca categoria precio stock descripcion ingredientes PRODUCTO_E
+    (6) nombre -> . NOMBRE_S TEXT NOMBRE_E
 
     NOMBRE_S        shift and go to state 11
 
+    nombre                         shift and go to state 10
 
-state 11
+state 9
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S . TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (5) id -> ID_S . TEXT ID_E
 
     TEXT            shift and go to state 12
 
 
-state 12
+state 10
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT . NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
-
-    NOMBRE_E        shift and go to state 13
-
-
-state 13
-
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E . MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (4) producto -> PRODUCTO_S id nombre . marca categoria precio stock descripcion ingredientes PRODUCTO_E
+    (7) marca -> . MARCA_S TEXT MARCA_E
 
     MARCA_S         shift and go to state 14
 
+    marca                          shift and go to state 13
 
-state 14
+state 11
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S . TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (6) nombre -> NOMBRE_S . TEXT NOMBRE_E
 
     TEXT            shift and go to state 15
 
 
+state 12
+
+    (5) id -> ID_S TEXT . ID_E
+
+    ID_E            shift and go to state 16
+
+
+state 13
+
+    (4) producto -> PRODUCTO_S id nombre marca . categoria precio stock descripcion ingredientes PRODUCTO_E
+    (8) categoria -> . CATEGORIA_S TEXT CATEGORIA_E
+
+    CATEGORIA_S     shift and go to state 18
+
+    categoria                      shift and go to state 17
+
+state 14
+
+    (7) marca -> MARCA_S . TEXT MARCA_E
+
+    TEXT            shift and go to state 19
+
+
 state 15
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT . MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (6) nombre -> NOMBRE_S TEXT . NOMBRE_E
 
-    MARCA_E         shift and go to state 16
+    NOMBRE_E        shift and go to state 20
 
 
 state 16
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E . CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (5) id -> ID_S TEXT ID_E .
 
-    CATEGORIA_S     shift and go to state 17
+    NOMBRE_S        reduce using rule 5 (id -> ID_S TEXT ID_E .)
 
 
 state 17
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S . TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (4) producto -> PRODUCTO_S id nombre marca categoria . precio stock descripcion ingredientes PRODUCTO_E
+    (9) precio -> . PRECIO_S TEXT PRECIO_E
 
-    TEXT            shift and go to state 18
+    PRECIO_S        shift and go to state 22
 
+    precio                         shift and go to state 21
 
 state 18
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT . CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (8) categoria -> CATEGORIA_S . TEXT CATEGORIA_E
 
-    CATEGORIA_E     shift and go to state 19
+    TEXT            shift and go to state 23
 
 
 state 19
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E . PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (7) marca -> MARCA_S TEXT . MARCA_E
 
-    PRECIO_S        shift and go to state 20
+    MARCA_E         shift and go to state 24
 
 
 state 20
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S . TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (6) nombre -> NOMBRE_S TEXT NOMBRE_E .
 
-    TEXT            shift and go to state 21
+    MARCA_S         reduce using rule 6 (nombre -> NOMBRE_S TEXT NOMBRE_E .)
 
 
 state 21
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT . PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (4) producto -> PRODUCTO_S id nombre marca categoria precio . stock descripcion ingredientes PRODUCTO_E
+    (10) stock -> . STOCK_S TEXT STOCK_E
 
-    PRECIO_E        shift and go to state 22
+    STOCK_S         shift and go to state 26
 
+    stock                          shift and go to state 25
 
 state 22
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E . STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
-
-    STOCK_S         shift and go to state 23
-
-
-state 23
-
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S . TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
-
-    TEXT            shift and go to state 24
-
-
-state 24
-
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT . STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
-
-    STOCK_E         shift and go to state 25
-
-
-state 25
-
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E . DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
-
-    DESCRIPCION_S   shift and go to state 26
-
-
-state 26
-
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S . TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (9) precio -> PRECIO_S . TEXT PRECIO_E
 
     TEXT            shift and go to state 27
 
 
+state 23
+
+    (8) categoria -> CATEGORIA_S TEXT . CATEGORIA_E
+
+    CATEGORIA_E     shift and go to state 28
+
+
+state 24
+
+    (7) marca -> MARCA_S TEXT MARCA_E .
+
+    CATEGORIA_S     reduce using rule 7 (marca -> MARCA_S TEXT MARCA_E .)
+
+
+state 25
+
+    (4) producto -> PRODUCTO_S id nombre marca categoria precio stock . descripcion ingredientes PRODUCTO_E
+    (11) descripcion -> . DESCRIPCION_S TEXT DESCRIPCION_E
+
+    DESCRIPCION_S   shift and go to state 30
+
+    descripcion                    shift and go to state 29
+
+state 26
+
+    (10) stock -> STOCK_S . TEXT STOCK_E
+
+    TEXT            shift and go to state 31
+
+
 state 27
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT . DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (9) precio -> PRECIO_S TEXT . PRECIO_E
 
-    DESCRIPCION_E   shift and go to state 28
+    PRECIO_E        shift and go to state 32
 
 
 state 28
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E . INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E
+    (8) categoria -> CATEGORIA_S TEXT CATEGORIA_E .
 
-    INGREDIENTES_S  shift and go to state 29
+    PRECIO_S        reduce using rule 8 (categoria -> CATEGORIA_S TEXT CATEGORIA_E .)
 
 
 state 29
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S . lista_ingredientes INGREDIENTES_E PRODUCTO_E
-    (5) lista_ingredientes -> . INGREDIENTE_S TEXT INGREDIENTE_E
-    (6) lista_ingredientes -> . INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes
+    (4) producto -> PRODUCTO_S id nombre marca categoria precio stock descripcion . ingredientes PRODUCTO_E
+    (12) ingredientes -> . INGREDIENTES_S lista_ingredientes INGREDIENTES_E
 
-    INGREDIENTE_S   shift and go to state 31
+    INGREDIENTES_S  shift and go to state 34
 
-    lista_ingredientes             shift and go to state 30
+    ingredientes                   shift and go to state 33
 
 state 30
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes . INGREDIENTES_E PRODUCTO_E
+    (11) descripcion -> DESCRIPCION_S . TEXT DESCRIPCION_E
 
-    INGREDIENTES_E  shift and go to state 32
+    TEXT            shift and go to state 35
 
 
 state 31
 
-    (5) lista_ingredientes -> INGREDIENTE_S . TEXT INGREDIENTE_E
-    (6) lista_ingredientes -> INGREDIENTE_S . TEXT INGREDIENTE_E lista_ingredientes
+    (10) stock -> STOCK_S TEXT . STOCK_E
 
-    TEXT            shift and go to state 33
+    STOCK_E         shift and go to state 36
 
 
 state 32
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E . PRODUCTO_E
+    (9) precio -> PRECIO_S TEXT PRECIO_E .
 
-    PRODUCTO_E      shift and go to state 34
+    STOCK_S         reduce using rule 9 (precio -> PRECIO_S TEXT PRECIO_E .)
 
 
 state 33
 
-    (5) lista_ingredientes -> INGREDIENTE_S TEXT . INGREDIENTE_E
-    (6) lista_ingredientes -> INGREDIENTE_S TEXT . INGREDIENTE_E lista_ingredientes
+    (4) producto -> PRODUCTO_S id nombre marca categoria precio stock descripcion ingredientes . PRODUCTO_E
 
-    INGREDIENTE_E   shift and go to state 35
+    PRODUCTO_E      shift and go to state 37
 
 
 state 34
 
-    (4) producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E .
+    (12) ingredientes -> INGREDIENTES_S . lista_ingredientes INGREDIENTES_E
+    (13) lista_ingredientes -> . INGREDIENTE_S TEXT INGREDIENTE_E
+    (14) lista_ingredientes -> . INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes
 
-    PRODUCTO_S      reduce using rule 4 (producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E .)
-    PRODUCTOS_E     reduce using rule 4 (producto -> PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E .)
+    INGREDIENTE_S   shift and go to state 39
 
+    lista_ingredientes             shift and go to state 38
 
 state 35
 
-    (5) lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E .
-    (6) lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E . lista_ingredientes
-    (5) lista_ingredientes -> . INGREDIENTE_S TEXT INGREDIENTE_E
-    (6) lista_ingredientes -> . INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes
+    (11) descripcion -> DESCRIPCION_S TEXT . DESCRIPCION_E
 
-    INGREDIENTES_E  reduce using rule 5 (lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E .)
-    INGREDIENTE_S   shift and go to state 31
+    DESCRIPCION_E   shift and go to state 40
 
-    lista_ingredientes             shift and go to state 36
 
 state 36
 
-    (6) lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes .
+    (10) stock -> STOCK_S TEXT STOCK_E .
 
-    INGREDIENTES_E  reduce using rule 6 (lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes .)
+    DESCRIPCION_S   reduce using rule 10 (stock -> STOCK_S TEXT STOCK_E .)
+
+
+state 37
+
+    (4) producto -> PRODUCTO_S id nombre marca categoria precio stock descripcion ingredientes PRODUCTO_E .
+
+    PRODUCTO_S      reduce using rule 4 (producto -> PRODUCTO_S id nombre marca categoria precio stock descripcion ingredientes PRODUCTO_E .)
+    PRODUCTOS_E     reduce using rule 4 (producto -> PRODUCTO_S id nombre marca categoria precio stock descripcion ingredientes PRODUCTO_E .)
+
+
+state 38
+
+    (12) ingredientes -> INGREDIENTES_S lista_ingredientes . INGREDIENTES_E
+
+    INGREDIENTES_E  shift and go to state 41
+
+
+state 39
+
+    (13) lista_ingredientes -> INGREDIENTE_S . TEXT INGREDIENTE_E
+    (14) lista_ingredientes -> INGREDIENTE_S . TEXT INGREDIENTE_E lista_ingredientes
+
+    TEXT            shift and go to state 42
+
+
+state 40
+
+    (11) descripcion -> DESCRIPCION_S TEXT DESCRIPCION_E .
+
+    INGREDIENTES_S  reduce using rule 11 (descripcion -> DESCRIPCION_S TEXT DESCRIPCION_E .)
+
+
+state 41
+
+    (12) ingredientes -> INGREDIENTES_S lista_ingredientes INGREDIENTES_E .
+
+    PRODUCTO_E      reduce using rule 12 (ingredientes -> INGREDIENTES_S lista_ingredientes INGREDIENTES_E .)
+
+
+state 42
+
+    (13) lista_ingredientes -> INGREDIENTE_S TEXT . INGREDIENTE_E
+    (14) lista_ingredientes -> INGREDIENTE_S TEXT . INGREDIENTE_E lista_ingredientes
+
+    INGREDIENTE_E   shift and go to state 43
+
+
+state 43
+
+    (13) lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E .
+    (14) lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E . lista_ingredientes
+    (13) lista_ingredientes -> . INGREDIENTE_S TEXT INGREDIENTE_E
+    (14) lista_ingredientes -> . INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes
+
+    INGREDIENTES_E  reduce using rule 13 (lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E .)
+    INGREDIENTE_S   shift and go to state 39
+
+    lista_ingredientes             shift and go to state 44
+
+state 44
+
+    (14) lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes .
+
+    INGREDIENTES_E  reduce using rule 14 (lista_ingredientes -> INGREDIENTE_S TEXT INGREDIENTE_E lista_ingredientes .)
 
