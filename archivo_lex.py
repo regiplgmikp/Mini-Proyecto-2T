@@ -22,38 +22,38 @@ tokens = (
 
 # Definir etiquetas para los tokens
 
-t_PRODUCTOS_S = r'<PRODUCTOS>'
-t_PRODUCTOS_E = r'</PRODUCTOS>'
+t_PRODUCTOS_S = r'<productos>'
+t_PRODUCTOS_E = r'</productos>'
 
-t_PRODUCTO_S = r'<PRODUCTO>'
-t_PRODUCTO_E = r'</PRODUCTO>'
+t_PRODUCTO_S = r'<producto>'
+t_PRODUCTO_E = r'</producto>'
 
-t_ID_S = r'<ID>'
-t_ID_E = r'</ID>'
+t_ID_S = r'<id>'
+t_ID_E = r'</id>'
 
-t_NOMBRE_S = r'<NOMBRE>'
-t_NOMBRE_E = r'</NOMBRE>'
+t_NOMBRE_S = r'<nombre>'
+t_NOMBRE_E = r'</nombre>'
 
-t_MARCA_S = r'<MARCA>'
-t_MARCA_E = r'</MARCA>'
+t_MARCA_S = r'<marca>'
+t_MARCA_E = r'</marca>'
 
-t_CATEGORIA_S = r'<CATEGORIA>'
-t_CATEGORIA_E = r'</CATEGORIA>'
+t_CATEGORIA_S = r'<categoria>'
+t_CATEGORIA_E = r'</categoria>'
 
-t_PRECIO_S = r'<PRECIO>'
-t_PRECIO_E = r'</PRECIO>'
+t_PRECIO_S = r'<precio>'
+t_PRECIO_E = r'</precio>'
 
-t_STOCK_S = r'<STOCK>'
-t_STOCK_E = r'</STOCK>'
+t_STOCK_S = r'<stock>'
+t_STOCK_E = r'</stock>'
 
-t_DESCRIPCION_S = r'<DESCRIPCION>'
-t_DESCRIPCION_E = r'</DESCRIPCION>'
+t_DESCRIPCION_S = r'<descripcion>'
+t_DESCRIPCION_E = r'</descripcion>'
 
-t_INGREDIENTES_S = r'<INGREDIENTES>'
-t_INGREDIENTES_E = r'</INGREDIENTES>'
+t_INGREDIENTES_S = r'<ingredientes>'
+t_INGREDIENTES_E = r'</ingredientes>'
 
-t_INGREDIENTE_S = r'<INGREDIENTE>'
-t_INGREDIENTE_E = r'</INGREDIENTE>'
+t_INGREDIENTE_S = r'<ingrediente>'
+t_INGREDIENTE_E = r'</ingrediente>'
 
 # Texto entre etiquetas
 t_TEXT =r'[A-ÿ0-9;,\._ ]+'
