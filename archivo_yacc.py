@@ -21,17 +21,7 @@ def p_lista_productos_mas(p):
 
 # Estructura completa del producto con campos y anidación
 def p_producto(p):
-    '''producto : PRODUCTO_S 
-                    ID_S TEXT ID_E
-                    NOMBRE_S TEXT NOMBRE_E
-                    MARCA_S TEXT MARCA_E
-                    CATEGORIA_S TEXT CATEGORIA_E
-                    PRECIO_S TEXT PRECIO_E
-                    STOCK_S TEXT STOCK_E
-                    DESCRIPCION_S TEXT DESCRIPCION_E
-                    INGREDIENTES_S lista_ingredientes INGREDIENTES_E 
-                 PRODUCTO_E'''
-    
+    '''producto : PRODUCTO_S ID_S TEXT ID_E NOMBRE_S TEXT NOMBRE_E MARCA_S TEXT MARCA_E CATEGORIA_S TEXT CATEGORIA_E PRECIO_S TEXT PRECIO_E STOCK_S TEXT STOCK_E DESCRIPCION_S TEXT DESCRIPCION_E INGREDIENTES_S lista_ingredientes INGREDIENTES_E PRODUCTO_E'''
     producto = {
         "id": p[3],
         "nombre": p[6],
@@ -43,11 +33,9 @@ def p_producto(p):
         "ingredientes": p[24],
     }
 
-    # INSERT principal
     insert_producto = f"INSERT INTO productos (id, nombre, marca, categoria, precio, stock, descripcion) VALUES ('{producto['id']}', '{producto['nombre']}', '{producto['marca']}', '{producto['categoria']}', {producto['precio']}, {producto['stock']}, '{producto['descripcion']}');"
     inserts.append(insert_producto)
 
-    # INSERTs de ingredientes
     for ing in producto['ingredientes']:
         insert_ing = f"INSERT INTO ingredientes (producto_id, nombre) VALUES ('{producto['id']}', '{ing}');"
         inserts.append(insert_ing)
