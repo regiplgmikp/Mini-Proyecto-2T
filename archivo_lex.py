@@ -56,7 +56,7 @@ t_INGREDIENTE_S = r'<ingrediente>'
 t_INGREDIENTE_E = r'</ingrediente>'
 
 # Texto entre etiquetas
-t_TEXT =r'[^<>]+'
+t_TEXT = r'[A-ÿ0-9;,\._ /]+'
 
 # Definir una regla para ignorar espacios en blanco y saltos de línea
 t_ignore = ' \t\n'
